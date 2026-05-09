@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Premium Website</title>
+
+  <style>
+    body{
+      margin:0;
+      background:black;
+      color:white;
+      font-family:Arial;
+      overflow-x:hidden;
+    }
+
+    .hero{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      background:radial-gradient(circle at top, #3b1b6d, black 60%);
+    }
+
+    h1{
+      font-size:80px;
+      margin:0;
+    }
+
+    p{
+      color:#bbbbbb;
+      max-width:600px;
+      line-height:1.6;
+      font-size:20px;
+    }
+
+    button{
+      margin-top:30px;
+      padding:15px 40px;
+      border:none;
+      border-radius:50px;
+      font-size:18px;
+      cursor:pointer;
+      background:white;
+      color:black;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.1);
+    }
+
+    .cards{
+      display:flex;
+      gap:30px;
+      justify-content:center;
+      padding:80px 20px;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      width:300px;
+      padding:30px;
+      border-radius:25px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+    }
+
+    .card h2{
+      margin-top:0;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1>Ahsan Mashrafi</h1>
+
+    <p>
+      It is my personal portfolio website
+    </p>
+
+    <button>Explore</button>
+  </section>
+
+  <section class="cards">
+
+    <div class="card">
+      <h2>Modern</h2>
+      <p>Clean futuristic premium interface.</p>
+    </div>
+
+    <div class="card">
+      <h2>Responsive</h2>
+      <p>Works on desktop and mobile devices.</p>
+    </div>
+
+    <div class="card">
+      <h2>Luxury</h2>
+      <p>Elegant visual style with smooth effects.</p>
+    </div>
+
+  </section>
+
+  <footer>
+    DAMN BROO!
+  </footer>
+
+</body>
+</html>
