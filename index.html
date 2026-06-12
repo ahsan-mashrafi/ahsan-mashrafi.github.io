@@ -3,324 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahsan Mashrafi | LLM Specialist</title>
+    <title>YT Downloader • Modern</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #FF0033;
+        }
         
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Inter', system_ui, sans-serif;
         }
         
-        .heading-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .hero-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
         }
 
-        .project-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        .yt-red {
+            color: #FF0033;
         }
 
-        .nav-link {
+        .section-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .download-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             position: relative;
+            overflow: hidden;
         }
         
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: rgb(59 130 246);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
 
-        .gradient-text {
-            background: linear-gradient(90deg, #60a5fa, #a5b4fc);
-            background-clip: text;
+        .modern-input {
+            transition: all 0.2s ease;
+        }
+        
+        .modern-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 0, 51, 0.1);
+        }
+
+        .code-block {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        .progress-bar {
+            transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .yt-gradient {
+            background: linear-gradient(135deg, #FF0033, #FF3366);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 overflow-x-hidden">
+<body class="bg-zinc-950 text-zinc-200">
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <span class="heading-font text-2xl font-semibold tracking-tighter">Ahsan Mashrafi</span>
+    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-10 h-10 bg-red-600 rounded-2xl flex items-center justify-center">
+                    <i class="fa-brands fa-youtube text-white text-3xl"></i>
+                </div>
+                <div>
+                    <span class="font-display text-2xl font-semibold tracking-tighter">YT</span>
+                    <span class="font-display text-2xl font-semibold tracking-tighter text-red-500">Downloader</span>
+                </div>
             </div>
-            
-            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
-                <a href="#about" class="nav-link cursor-pointer">About</a>
-                <a href="#featured" class="nav-link cursor-pointer">Featured Work</a>
-                <a href="#projects" class="nav-link cursor-pointer">All Projects</a>
-                <a href="#contact" class="nav-link cursor-pointer">Contact</a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <a href="https://github.com/ahsan-mashrafi" target="_blank"
-                   class="px-5 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 transition-all flex items-center gap-2 text-sm font-medium">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
+            <div class="flex items-center gap-x-2 text-sm">
+                <div class="px-3 py-1.5 bg-zinc-900 rounded-full flex items-center gap-x-2 text-xs">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="text-emerald-400">yt-dlp powered</span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero-bg min-h-screen flex items-center pt-20 relative">
-        <div class="absolute inset-0 bg-[radial-gradient(at_50%_30%,rgba(59,130,246,0.15),transparent_70%)]"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm">
-                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    Open to AI opportunities
-                </div>
-                
-                <h1 class="heading-font text-7xl md:text-8xl font-bold leading-none tracking-tighter">
-                    Ahsan<br>Mashrafi
-                </h1>
-                
-                <p class="text-3xl text-slate-400 font-light">
-                    LLM Specialist<br>
-                    <span class="gradient-text">AI Infrastructure &amp; Automation</span>
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" 
-                       class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-3xl font-semibold text-lg transition-all flex items-center gap-3 group">
-                        View My Work
-                        <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                    <a href="#contact" 
-                       class="px-8 py-4 border border-slate-400 hover:border-white rounded-3xl font-semibold text-lg transition-all">
-                        Get in Touch
-                    </a>
-                </div>
-
-                <!-- Social Links -->
-                <div class="social-links flex gap-6 text-3xl pt-6">
-                    <a href="https://github.com/ahsan-mashrafi" target="_blank" class="hover:text-blue-400 transition-colors"><i class="fab fa-github"></i></a>
-                    <a href="https://huggingface.co/ahsan-mashrafi" target="_blank" class="hover:text-orange-400 transition-colors">
-                        <svg style="width: 1.3em; height: 1.3em; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 22c-5.52 0-10-4.48-10-10S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm3-12c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm-6 0c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm3 6c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"/>
-                        </svg>
-                    </a>
-                    <a href="https://x.com/ahsan_ML" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-x"></i></a>
-                    <a href="https://www.linkedin.com/in/ahsan-mashrafi" target="_blank" class="hover:text-blue-500 transition-colors"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.youtube.com/@ahsan-mashrafi" target="_blank" class="hover:text-red-500 transition-colors"><i class="fab fa-youtube"></i></a>
-                </div>
+    <div class="max-w-5xl mx-auto px-6 pt-12 pb-20">
+        <!-- Hero -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-zinc-900 rounded-full mb-6 border border-zinc-800">
+                <i class="fa-solid fa-download text-red-500"></i>
+                <span class="text-sm font-medium">Fast • Reliable • Free</span>
             </div>
-
-            <div class="relative hidden md:block">
-                <div class="absolute -inset-10 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-[4rem] -rotate-6"></div>
-                
-                <!-- Replace this with your photo -->
-                <img src="favicon.png" 
-                     alt="Ahsan Mashrafi"
-                     class="relative rounded-3xl shadow-2xl border border-white/10 w-full aspect-[4/4.5] object-cover">
-
-                <div class="absolute -bottom-6 -right-6 glass px-6 py-4 rounded-3xl border border-white/10 flex items-center gap-4">
-                    <div class="text-emerald-400">
-                        <i class="fa-solid fa-circle-check text-3xl"></i>
-                    </div>
-                    <div>
-                        <div class="font-semibold">Available for</div>
-                        <div class="text-sm text-slate-400">Consulting • Freelance • Full-time</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs tracking-widest">
-            <span>SCROLL TO EXPLORE</span>
-            <i class="fa-solid fa-chevron-down animate-bounce"></i>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-24 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16 items-center">
-                <div class="md:col-span-5">
-                    <div class="sticky top-28">
-                        <h2 class="heading-font text-6xl font-semibold tracking-tighter">The Story</h2>
-                        <div class="h-1 w-20 bg-blue-500 mt-6"></div>
-                    </div>
-                </div>
-                
-                <div class="md:col-span-7 text-lg leading-relaxed text-slate-300 space-y-6">
-                    <p class="text-2xl font-light">
-                        I build production-grade LLM systems that turn cutting-edge research into reliable, scalable infrastructure.
-                    </p>
-                    <p>
-                        With deep expertise in large language models, RAG pipelines, agentic workflows, and MLOps, I help companies ship AI products that actually work in the real world.
-                    </p>
-                    <p>
-                        Former AI Engineer. Obsessed with inference optimization, evaluation frameworks, and turning messy prototypes into robust production systems.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-8 pt-8">
-                        <div>
-                            <div class="text-4xl font-semibold text-white">15+</div>
-                            <div class="text-slate-400">Production LLM Projects</div>
-                        </div>
-                        <div>
-                            <div class="text-4xl font-semibold text-white">4</div>
-                            <div class="text-slate-400">Years in AI</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section id="featured" class="py-24 bg-slate-900 border-t border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="heading-font text-6xl font-semibold tracking-tighter">Featured Work</h2>
-                </div>
-                <a href="#projects" class="group flex items-center gap-3 text-sm uppercase tracking-widest hover:text-blue-400">
-                    All Projects 
-                    <span class="block w-8 h-px bg-current group-hover:w-12 transition-all"></span>
-                </a>
-            </div>
-
-            <!-- Rest of the projects remain the same (I kept them as they were) -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card glass border border-slate-700 rounded-3xl overflow-hidden group">
-                    <div class="h-80 bg-gradient-to-br from-violet-500 to-fuchsia-500 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-6xl font-black text-white/20">01</div>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <span class="px-3 py-1 text-xs rounded-full bg-violet-500/20 text-violet-300">RAG • Production</span>
-                            </div>
-                            <span class="text-xs text-slate-400">2025</span>
-                        </div>
-                        <h3 class="text-3xl font-semibold mt-4 group-hover:text-blue-400 transition-colors">Enterprise Knowledge Assistant</h3>
-                        <p class="mt-3 text-slate-400 line-clamp-3">
-                            Multi-agent RAG system with 98% retrieval accuracy across 500k+ documents. Deployed on Kubernetes with cost optimization.
-                        </p>
-                        <div class="mt-8 flex gap-3">
-                            <span class="text-xs px-4 py-2 bg-white/5 rounded-2xl">LangChain</span>
-                            <span class="text-xs px-4 py-2 bg-white/5 rounded-2xl">Llama 3</span>
-                            <span class="text-xs px-4 py-2 bg-white/5 rounded-2xl">Weaviate</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card glass border border-slate-700 rounded-3xl overflow-hidden group">
-                    <div class="h-80 bg-gradient-to-br from-amber-500 to-red-500 relative">
-                        <div class="absolute inset-0 flex items-center justify-center text-6xl font-black text-white/20">02</div>
-                    </div>
-                    <div class="p-8">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <span class="px-3 py-1 text-xs rounded-full bg-amber-500/20 text-amber-300">Inference • Optimization</span>
-                            </div>
-                            <span class="text-xs text-slate-400">2025</span>
-                        </div>
-                        <h3 class="text-3xl font-semibold mt-4 group-hover:text-blue-400 transition-colors">vLLM + Triton Serving Platform</h3>
-                        <p class="mt-3 text-slate-400 line-clamp-3">
-                            4x throughput improvement for Llama-70B using continuous batching and custom Triton backend. Cost reduced by 62%.
-                        </p>
-                        <div class="mt-8 flex gap-3">
-                            <span class="text-xs px-4 py-2 bg-white/5 rounded-2xl">vLLM</span>
-                            <span class="text-xs px-4 py-2 bg-white/5 rounded-2xl">NVIDIA Triton</span>
-                            <span class="text-xs px-4 py-2 bg-white/5 rounded-2xl">Kubernetes</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- All Projects Teaser -->
-    <section id="projects" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="heading-font text-5xl font-semibold tracking-tighter text-center mb-4">More Experiments &amp; Builds</h2>
-            <p class="text-center text-slate-400 max-w-md mx-auto">Random experiments, side projects, and open-source contributions</p>
-            
-            <div class="text-center mt-12">
-                <a href="not_projects.html" 
-                   class="inline-flex items-center gap-4 group px-10 py-6 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-3xl transition-all">
-                    <div class="text-left">
-                        <div class="font-semibold text-xl">Browse 20+ Other Projects</div>
-                        <div class="text-slate-400 text-sm">LLM playgrounds, automation scripts, fine-tunes, etc.</div>
-                    </div>
-                    <div class="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-3xl group-hover:rotate-12 transition-transform">
-                        →
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-24 border-t border-slate-800 bg-slate-900">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="heading-font text-6xl font-semibold tracking-tighter">Let's Build Something Great</h2>
-            <p class="mt-6 text-xl text-slate-400 max-w-md mx-auto">
-                Whether you need a production LLM system, automation pipeline, or just want to chat about AI — I'm all ears.
+            <h1 class="text-6xl font-display tracking-tighter font-semibold mb-4">
+                Download YouTube<br>
+                <span class="yt-gradient">Videos &amp; Songs</span>
+            </h1>
+            <p class="text-xl text-zinc-400 max-w-md mx-auto">
+                Beautiful interface. Powerful backend. One click to get your custom Python script.
             </p>
-            
-            <a href="mailto:ahsan.mashrafi.ai@gmail.com" 
-               class="mt-12 inline-block px-12 py-6 text-xl font-semibold bg-white text-slate-950 rounded-3xl hover:scale-105 transition-transform">
-                Say Hello →
-            </a>
-            
-            <div class="mt-20 text-sm text-slate-500">
-                Dhaka, Bangladesh • Open to remote &amp; relocation
+        </div>
+
+        <!-- Main Card -->
+        <div class="max-w-3xl mx-auto">
+            <div class="glass border border-zinc-800 rounded-3xl p-8 shadow-2xl">
+                
+                <!-- Form -->
+                <div class="space-y-6">
+                    <!-- URL -->
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-400 mb-2">YouTube URL</label>
+                        <div class="relative">
+                            <input id="url" type="text" 
+                                   class="modern-input w-full bg-zinc-900 border border-zinc-700 focus:border-red-500 rounded-2xl px-5 py-4 text-lg placeholder:text-zinc-500"
+                                   placeholder="https://www.youtube.com/watch?v=..." 
+                                   value="https://www.youtube.com/watch?v=dQw4w9wgccc">
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Type -->
+                        <div>
+                            <label class="block text-sm font-medium text-zinc-400 mb-3">Download Type</label>
+                            <div class="flex bg-zinc-900 rounded-2xl p-1 border border-zinc-700">
+                                <div onclick="selectType('video')" id="type-video"
+                                     class="flex-1 flex items-center justify-center gap-x-2 py-3 px-4 rounded-[14px] cursor-pointer bg-white text-zinc-900 font-medium transition-all">
+                                    <i class="fa-solid fa-video"></i>
+                                    <span>Video</span>
+                                </div>
+                                <div onclick="selectType('audio')" id="type-audio"
+                                     class="flex-1 flex items-center justify-center gap-x-2 py-3 px-4 rounded-[14px] cursor-pointer hover:bg-zinc-800 transition-all">
+                                    <i class="fa-solid fa-music"></i>
+                                    <span>Audio (MP3)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quality -->
+                        <div id="quality-section">
+                            <label class="block text-sm font-medium text-zinc-400 mb-2">Video Quality</label>
+                            <select id="quality" class="modern-input w-full bg-zinc-900 border border-zinc-700 rounded-2xl px-5 py-[17px] text-lg focus:border-red-500">
+                                <option value="best">Best Available</option>
+                                <option value="1080">1080p (Full HD)</option>
+                                <option value="720">720p (HD)</option>
+                                <option value="480">480p</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Output Directory -->
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-400 mb-2">Output Folder</label>
+                        <input id="output" type="text" value="./downloads" 
+                               class="modern-input w-full bg-zinc-900 border border-zinc-700 focus:border-red-500 rounded-2xl px-5 py-4 text-lg">
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="mt-8">
+                    <button onclick="generateScript()"
+                            class="download-btn w-full flex items-center justify-center gap-x-3 bg-red-600 hover:bg-red-500 active:bg-red-700 transition-all text-white font-semibold text-xl py-5 rounded-2xl shadow-xl shadow-red-900/30">
+                        <i class="fa-solid fa-magic text-2xl"></i>
+                        <span>Generate Download Script</span>
+                    </button>
+                    <p class="text-center text-xs text-zinc-500 mt-3">Creates a ready-to-run Python file with your settings</p>
+                </div>
+            </div>
+
+            <!-- Generated Script Section (hidden initially) -->
+            <div id="result-section" class="hidden mt-8">
+                <div class="glass border border-zinc-800 rounded-3xl p-8">
+                    <div class="flex items-center justify-between mb-5">
+                        <div>
+                            <h3 class="font-semibold text-xl flex items-center gap-x-2">
+                                <i class="fa-solid fa-file-code text-red-500"></i>
+                                <span>Your Custom Script</span>
+                            </h3>
+                            <p class="text-sm text-zinc-400">Copy &amp; run this Python file</p>
+                        </div>
+                        <div class="flex gap-x-2">
+                            <button onclick="copyToClipboard('python-code')" 
+                                    class="flex items-center gap-x-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 transition rounded-2xl text-sm font-medium">
+                                <i class="fa-solid fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                            <button onclick="downloadPythonFile()" 
+                                    class="flex items-center gap-x-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 transition rounded-2xl text-sm font-medium">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Download .py</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Python Code -->
+                    <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-5 overflow-auto max-h-[380px]">
+                        <pre id="python-code" class="code-block text-sm text-emerald-300 whitespace-pre-wrap"></pre>
+                    </div>
+
+                    <!-- CLI Alternative -->
+                    <div class="mt-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium text-zinc-400">Alternative: yt-dlp CLI command</span>
+                            <button onclick="copyToClipboard('cli-command')" 
+                                    class="text-xs px-3 py-1 bg-zinc-800 hover:bg-zinc-700 rounded-xl flex items-center gap-x-1.5">
+                                <i class="fa-solid fa-copy text-xs"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-4">
+                            <code id="cli-command" class="code-block text-sm text-amber-300 break-all"></code>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-slate-800 text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>© 2026 Ahsan Mashrafi. All rights reserved.</div>
-            <div>Made with obsession for LLMs</div>
+        <!-- Instructions -->
+        <div class="max-w-3xl mx-auto mt-12 text-sm">
+            <div class="glass border border-zinc-800 rounded-3xl p-6">
+                <h4 class="font-semibold mb-3 flex items-center gap-x-2">
+                    <i class="fa-solid fa-info-circle text-red-500"></i>
+                    How to use
+                </h4>
+                <ol class="list-decimal list-inside space-y-1.5 text-zinc-400">
+                    <li>Fill in the URL and choose options above</li>
+                    <li>Click <strong>"Generate Download Script"</strong></li>
+                    <li>Copy the Python code or download the <code>.py</code> file</li>
+                    <li>Make sure you have <code>yt-dlp</code> installed: <code>pip install yt-dlp</code></li>
+                    <li>Run the script: <code>python your-script.py</code></li>
+                </ol>
+                <div class="mt-4 text-xs bg-zinc-900 p-3 rounded-2xl border border-zinc-700">
+                    <strong class="text-red-400">Note:</strong> This tool generates a script. The actual download happens on your computer using yt-dlp.
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href').length > 1) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#FF0033');
+        }
+
+        let currentType = 'video';
+
+        function selectType(type) {
+            currentType = type;
+            
+            const videoBtn = document.getElementById('type-video');
+            const audioBtn = document.getElementById('type-audio');
+            const qualitySection = document.getElementById('quality-section');
+
+            if (type === 'video') {
+                videoBtn.classList.add('bg-white', 'text-zinc-900');
+                videoBtn.classList.remove('hover:bg-zinc-800');
+                audioBtn.classList.remove('bg-white', 'text-zinc-900');
+                audioBtn.classList.add('hover:bg-zinc-800');
+                qualitySection.style.display = 'block';
+            } else {
+                audioBtn.classList.add('bg-white', 'text-zinc-900');
+                audioBtn.classList.remove('hover:bg-zinc-800');
+                videoBtn.classList.remove('bg-white', 'text-zinc-900');
+                videoBtn.classList.add('hover:bg-zinc-800');
+                qualitySection.style.display = 'none';
+            }
+        }
+
+        function generateScript() {
+            const url = document.getElementById('url').value.trim();
+            if (!url) {
+                alert('Please enter a YouTube URL');
+                return;
+            }
+
+            const audioOnly = currentType === 'audio';
+            const quality = document.getElementById('quality').value;
+            const outputDir = document.getElementById('output').value || '.';
+
+            // Show loading animation
+            const resultSection = document.getElementById('result-section');
+            resultSection.classList.remove('hidden');
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Fake progress (for nice UX)
+            const progressContainer = document.createElement('div');
+            progressContainer.className = 'mb-6';
+            progressContainer.innerHTML = `
+                <div class="flex justify-between text-xs mb-1.5 px-1">
+                    <span>Generating your script...</span>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="h-2 bg-gradient-to-r from-red-500 to-red-600 rounded-full w-0 transition-all duration-700"></div>
+                </div>
+            `;
+            
+            // Insert progress before the code blocks
+            const firstChild = resultSection.querySelector('.glass');
+            if (firstChild) {
+                firstChild.insertBefore(progressContainer, firstChild.firstChild);
+            }
+
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 25 + 15;
+                if (progress > 100) progress = 100;
+                
+                progressBar.style.width = progress + '%';
+                progressText.textContent = Math.floor(progress) + '%';
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progressContainer.remove();
+                        showGeneratedScript(url, audioOnly, quality, outputDir);
+                    }, 400);
+                }
+            }, 180);
+        }
+
+        function showGeneratedScript(url, audioOnly, quality, outputDir) {
+            // Generate Python code
+            let pythonCode = `import yt_dlp
+from pathlib import Path
+
+url = "${url}"
+output_path = Path("${outputDir}")
+output_path.mkdir(parents=True, exist_ok=True)
+
+ydl_opts = {
+    'outtmpl': str(output_path / '%(title)s.%(ext)s'),
+    'quiet': False,
+}
+
+`;
+
+            if (audioOnly) {
+                pythonCode += `ydl_opts.update({
+    'format': 'bestaudio/best',
+    'postprocessors': [{
+        'key': 'FFmpegExtractAudio',
+        'preferredcodec': 'mp3',
+        'preferredquality': '192',
+    }],
+})
+
+print("🎵 Downloading audio (MP3)...")
+`;
+            } else {
+                let format = 'bestvideo+bestaudio/best';
+                if (quality === '1080') format = 'bestvideo[height<=1080]+bestaudio/best';
+                else if (quality === '720') format = 'bestvideo[height<=720]+bestaudio/best';
+                else if (quality === '480') format = 'bestvideo[height<=480]+bestaudio/best';
+
+                pythonCode += `ydl_opts['format'] = '${format}'
+
+print("🎥 Downloading video...")
+`;
+            }
+
+            pythonCode += `
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([url])
+
+print("✅ Download completed!")
+`;
+
+            // CLI command
+            let cliCommand = `yt-dlp "${url}" -o "${outputDir}/%(title)s.%(ext)s"`;
+            if (audioOnly) {
+                cliCommand += ` -x --audio-format mp3 --audio-quality 0`;
+            } else {
+                if (quality !== 'best') {
+                    cliCommand += ` -f "bestvideo[height<=${quality}]+bestaudio/best"`;
+                }
+            }
+
+            // Display
+            document.getElementById('python-code').textContent = pythonCode.trim();
+            document.getElementById('cli-command').textContent = cliCommand;
+        }
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent || element.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = elementId === 'python-code' ? 'Copy' : 'Copy';
+                const btns = document.querySelectorAll(`button[onclick*="copyToClipboard('${elementId}')"]`);
+                
+                btns.forEach(btn => {
+                    const originalHTML = btn.innerHTML;
+                    btn.innerHTML = `<i class="fa-solid fa-check"></i> <span>Copied!</span>`;
+                    btn.style.backgroundColor = '#166534';
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.style.backgroundColor = '';
+                    }, 1800);
+                });
+            }).catch(() => {
+                // Fallback
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Copied to clipboard!');
+            });
+        }
+
+        function downloadPythonFile() {
+            const code = document.getElementById('python-code').textContent;
+            if (!code) return;
+
+            const blob = new Blob([code], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'youtube_downloader.py';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize
+        function init() {
+            initializeTailwind();
+            
+            // Default to video
+            selectType('video');
+            
+            // Allow Enter key on URL field
+            const urlInput = document.getElementById('url');
+            urlInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    generateScript();
                 }
             });
-        });
+
+            // Keyboard shortcut hint
+            console.log('%c[YT Downloader] Press Enter in URL field to generate script', 'color:#666');
+        }
+
+        window.onload = init;
     </script>
 </body>
 </html>
